@@ -3,6 +3,8 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Sectioin';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import { GlobalStyle } from './GlobalStyle';
+import { Layout } from './Layout';
 
 export class App extends Component {
   state = {
@@ -32,18 +34,9 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <div
-        style={{
-          padding: '150px',
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#862a13',
-        }}
-      >
+      <Layout>
+        <GlobalStyle />
+
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -64,7 +57,7 @@ export class App extends Component {
             />
           )}
         </Section>
-      </div>
+      </Layout>
     );
   }
-};
+}

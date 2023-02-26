@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ButtonsCover } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <ul>
+    <ButtonsCover>
       {options.map(option => {
         return (
           <li key={option}>
@@ -13,7 +14,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           </li>
         );
       })}
-    </ul>
+    </ButtonsCover>
   );
 };
 
